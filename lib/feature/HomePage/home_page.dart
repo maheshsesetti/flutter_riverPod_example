@@ -69,6 +69,7 @@ class HomePage extends ConsumerWidget {
                               isDense: true,
                               value: selectedItem,
                               decoration: InputDecoration(
+                                hintText: 'Please Select value..',
                                   contentPadding: const EdgeInsets.symmetric(
                                       horizontal: 10),
                                   filled: true,
@@ -99,14 +100,10 @@ class HomePage extends ConsumerWidget {
                                   return jsonData.where((element) {
                                     return element['visible'] != null;
                                   }).map((e) {
-                                    // print(e['visible']);
-                                    // print(e['visible'] ==
-                                    //     ref.watch(conditionCheckProvider));
                                     return e['visible'] ==
                                         ref.watch(conditionCheckProvider);
                                   }).toList();
                                 });
-                                print(ref.watch(outProvider));
                               })
                           : const SizedBox.shrink();
                     }),
